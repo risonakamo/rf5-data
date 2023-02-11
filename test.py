@@ -34,7 +34,8 @@ class FarmItem2(FarmItem):
     # total amount of sale (sell price * grow quantity)
     totalSale:float
 
-    # actual profit (total sale - buy price)
+    # actual profit (total sale - buy price). if the item is regrowing, then the profit
+    # is based on 0 buy price (because it has no cost to regrow)
     profit:float
     # profit per day (profit / grow time)
     profitPerDay:float
@@ -50,22 +51,36 @@ class FarmItem3(FarmItem2):
 
 def main():
     data:List[FarmItem]=[]
+    currentSeason:str="summer"
 
     with open("rf5-farm-data.yml","r",encoding="utf-8") as rfile:
         data=parse_obj_as(List[FarmItem],safe_load(rfile))
 
+    # calculate main values
     data2:List[FarmItem2]=[
         upgradeFarmItem(x)
         for x in data
     ]
 
-    dataframeDisplay(data2)
+    # calculate values with inputs
+    data3:List[FarmItem3]=[
+        upgradeFarmItem3(x,currentSeason)
+        for x in data2
+    ]
+
+    dataframeDisplay(data3)
 
 def upgradeFarmItem(farmitem:FarmItem)->FarmItem2:
     """calculate farm item 2 values"""
 
     totalSale:float=farmitem.sell*farmitem.growQuant
-    profit:float=totalSale-farmitem.buy
+
+    profit:float
+    if not farmitem.regrow:
+        profit=totalSale-farmitem.buy
+    else:
+        profit=totalSale
+
     fastGrowTime:float=farmitem.growTime/1.5
 
     return FarmItem2(
@@ -87,13 +102,45 @@ def upgradeFarmItem(farmitem:FarmItem)->FarmItem2:
         fastProfitPerDay=profit/fastGrowTime
     )
 
-def dataframeDisplay(data:List[FarmItem2])->None:
+def upgradeFarmItem3(item:FarmItem2,currentSeason:str)->FarmItem3:
+    """calculate farm item 3 values"""
+
+    currentProfit:float
+    if currentSeason in item.goodSeasons:
+        currentProfit=item.fastProfitPerDay
+    else:
+        currentProfit=item.profitPerDay
+
+    return FarmItem3(
+        name=item.name,
+        lv=item.lv,
+        buy=item.buy,
+        growTime=item.growTime,
+        sell=item.sell,
+        growQuant=item.growQuant,
+        goodSeasons=item.goodSeasons,
+        regrow=item.regrow,
+        totalSale=item.totalSale,
+        profit=item.profit,
+        profitPerDay=item.profitPerDay,
+        fastGrowTime=item.fastGrowTime,
+        fastProfitPerDay=item.fastProfitPerDay,
+
+        currentProfitPerDay=currentProfit
+    )
+
+def dataframeDisplay(data:List[FarmItem3])->None:
     """do dataframe display"""
 
-    print(DataFrame.from_records([
+    df:DataFrame=DataFrame.from_records([
         x.dict()
         for x in data
-    ]))
+    ])
+
+    df=df[["name","lv","currentProfitPerDay"]]
+    df=df.sort_values("currentProfitPerDay",ascending=False)
+
+    print(df)
 
 if __name__=="__main__":
     main()

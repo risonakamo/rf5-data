@@ -5,17 +5,17 @@
   sell: 380
   growQuant: 3
   goodSeasons:
-    - fa
+    - fall
   regrow: false
 
-- name: spinach
+- name: boiled spinach
   lv: 3
   buy: 60
   growTime: 2
   sell: 95
   growQuant: 2
   goodSeasons:
-    - fa
+    - fall
   regrow: false
 
 - name: radish
@@ -25,5 +25,100 @@
   sell: 95
   growQuant: 2
   goodSeasons:
-    - fa
+    - fall
   regrow: false
+
+- name: pink turnip
+  lv: 1
+  buy: 160
+  growTime: 11
+  sell: 200
+  growQuant: 4
+  goodSeasons:
+    - spring
+  regrow: false
+
+- name: leek
+  lv: 1
+  buy: 680
+  growTime: 9
+  sell: 1600
+  growQuant: 1
+  goodSeasons:
+    - spring
+    - fall
+  regrow: false
+
+- name: strawberry
+  lv: 1
+  buy: 400
+  growTime: 16
+  sell: 135
+  growQuant: 6
+  goodSeasons:
+    - spring
+    - fall
+  regrow: true
+
+- name: corn
+  lv: 1
+  buy: 450
+  growTime: 7
+  sell: 1000
+  growQuant:  1
+  goodSeasons:
+    - spring
+    - summer
+  regrow: false
+
+- name: potato
+  lv: 3
+  buy: 80
+  growTime: 7
+  sell: 108
+  growQuant: 3
+  goodSeasons:
+    - spring
+    - summer
+  regrow: false
+
+- name: green pepper
+  lv: 1
+  buy: 800
+  growTime: 7
+  sell: 150
+  growQuant: 5
+  goodSeasons:
+    - summer
+  regrow: true
+
+- name: sweet yam
+  lv: 1
+  buy: 250
+  growTime: 8
+  sell: 240
+  growQuant: 5
+  goodSeasons:
+    - summer
+    - fall
+  regrow: false
+
+- name: pickled white turnip
+  lv: 2
+  buy: 10
+  growTime: 3
+  sell: 48
+  growQuant: 2
+  goodSeasons:
+    - summer
+    - fall
+  regrow: false
+
+- name: fodder
+  lv: 1
+  buy: 30
+  growTime: 4
+  sell: 60
+  growQuant: 1
+  goodSeasons: []
+  regrow: true
