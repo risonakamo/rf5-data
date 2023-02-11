@@ -45,10 +45,10 @@ def calcTotalFieldData(fields:List[FieldData])->TotalFieldData:
         item:str
         usage:float
 
-        usages[item]=usage/alltotalSpace
+        usages[item]=(usage/alltotalSpace)*100
 
-    totalSpacePercent:float=totalUse/alltotalSpace
-    emptySpace:float=1-totalSpacePercent
+    totalSpacePercent:float=(totalUse/alltotalSpace)*100
+    emptySpace:float=100-totalSpacePercent
 
     return TotalFieldData(
         fields=fields,

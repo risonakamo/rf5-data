@@ -1,18 +1,25 @@
 - name: home
-  totalSpace: 10
-  usages: {}
+  totalSpace: 16
+  usages:
+    swordshield: 1
 
 - name: earth
-  totalSpace: 20
+  totalSpace: 24
   usages:
     research: 2
+    yam: 3
+    leek: 1
+    green_pepper: 1
 
 - name: fire
-  totalSpace: 30
+  totalSpace: 24
   usages:
-    fodder: 10
+    strawberry: 4
+    green_pepper: 1
+    yam: 9
+    fodder: 6
 
 - name: ice
   totalSpace: 40
   usages:
-    yam: 20
+    yam: 22

@@ -1,29 +1,29 @@
 - name: carrot
   lv: 1
   buy: 400
-  growTime: 10
   sell: 380
+  growTime: 10
   growQuant: 3
   goodSeasons:
     - fall
   regrow: false
 
-- name: boiled spinach
+- name: spinach
   lv: 3
   buy: 60
+  sell: 78
   growTime: 2
-  sell: 95
   growQuant: 2
   goodSeasons:
     - fall
   regrow: false
 
 - name: radish
-  lv: 3
-  buy: 60
-  growTime: 2
-  sell: 95
-  growQuant: 2
+  lv: 5
+  buy: 120
+  growTime: 5
+  sell: 504
+  growQuant: 1
   goodSeasons:
     - fall
   regrow: false
@@ -31,18 +31,18 @@
 - name: pink turnip
   lv: 1
   buy: 160
-  growTime: 11
   sell: 200
+  growTime: 11
   growQuant: 4
   goodSeasons:
     - spring
   regrow: false
 
 - name: leek
-  lv: 1
+  lv: 3
   buy: 680
+  sell: 1920
   growTime: 9
-  sell: 1600
   growQuant: 1
   goodSeasons:
     - spring
@@ -52,8 +52,8 @@
 - name: strawberry
   lv: 1
   buy: 400
-  growTime: 16
   sell: 135
+  growTime: 16
   growQuant: 6
   goodSeasons:
     - spring
@@ -61,10 +61,10 @@
   regrow: true
 
 - name: corn
-  lv: 1
+  lv: 2
   buy: 450
+  sell: 1100
   growTime: 7
-  sell: 1000
   growQuant:  1
   goodSeasons:
     - spring
@@ -74,8 +74,8 @@
 - name: potato
   lv: 3
   buy: 80
-  growTime: 7
   sell: 108
+  growTime: 7
   growQuant: 3
   goodSeasons:
     - spring
@@ -83,10 +83,10 @@
   regrow: false
 
 - name: green pepper
-  lv: 1
+  lv: 4
   buy: 800
+  sell: 195
   growTime: 7
-  sell: 150
   growQuant: 5
   goodSeasons:
     - summer
@@ -97,6 +97,17 @@
   buy: 250
   growTime: 8
   sell: 240
+  growQuant: 5
+  goodSeasons:
+    - summer
+    - fall
+  regrow: false
+
+- name: yam
+  lv: 2
+  buy: 250
+  sell: 154
+  growTime: 8
   growQuant: 5
   goodSeasons:
     - summer
@@ -114,6 +125,17 @@
     - fall
   regrow: false
 
+- name: turnip
+  lv: 5
+  buy: 10
+  sell: 42
+  growTime: 3
+  growQuant: 2
+  goodSeasons:
+    - summer
+    - fall
+  regrow: false
+
 - name: fodder
   lv: 1
   buy: 30
@@ -121,4 +143,26 @@
   sell: 60
   growQuant: 1
   goodSeasons: []
+  regrow: true
+
+- name: pumpkin
+  lv: 5
+  buy: 200
+  sell: 154
+  growTime: 7
+  growQuant: 3
+  goodSeasons:
+    - spring
+    - summer
+  regrow: true
+
+- name: cucumber
+  lv: 1
+  buy: 320
+  sell: 68
+  growTime: 5
+  growQuant: 5
+  goodSeasons:
+    - spring
+    - summer
   regrow: true

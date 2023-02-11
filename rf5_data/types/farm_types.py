@@ -44,3 +44,10 @@ class FarmItem2(FarmItem):
 class FarmItem3(FarmItem2):
     # the current active profit per day of this item, based on the current season
     currentProfitPerDay:float
+
+class CraftItem(BaseModel):
+    """an item that can be crafted from a base farm item"""
+
+    name:str
+    lv:int
+    sell:float
