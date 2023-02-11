@@ -14,14 +14,7 @@ def upgradeFarmItem(farmitem:FarmItem)->FarmItem2:
     fastGrowTime:float=farmitem.growTime/1.5
 
     return FarmItem2(
-        name=farmitem.name,
-        lv=farmitem.lv,
-        buy=farmitem.buy,
-        growTime=farmitem.growTime,
-        sell=farmitem.sell,
-        growQuant=farmitem.growQuant,
-        goodSeasons=farmitem.goodSeasons,
-        regrow=farmitem.regrow,
+        **farmitem.dict(),
 
         totalSale=totalSale,
 
@@ -42,19 +35,7 @@ def upgradeFarmItem3(item:FarmItem2,currentSeason:str)->FarmItem3:
         currentProfit=item.profitPerDay
 
     return FarmItem3(
-        name=item.name,
-        lv=item.lv,
-        buy=item.buy,
-        growTime=item.growTime,
-        sell=item.sell,
-        growQuant=item.growQuant,
-        goodSeasons=item.goodSeasons,
-        regrow=item.regrow,
-        totalSale=item.totalSale,
-        profit=item.profit,
-        profitPerDay=item.profitPerDay,
-        fastGrowTime=item.fastGrowTime,
-        fastProfitPerDay=item.fastProfitPerDay,
+        **item.dict(),
 
         currentProfitPerDay=currentProfit
     )
