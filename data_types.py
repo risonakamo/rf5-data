@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List,Dict
 
 class FarmItem(BaseModel):
     # item name
@@ -44,3 +44,27 @@ class FarmItem2(FarmItem):
 class FarmItem3(FarmItem2):
     # the current active profit per day of this item, based on the current season
     currentProfitPerDay:float
+
+FieldUsage=Dict[str,float]
+"""usage information of a field
+key: type of item
+value: amount of space being used by that item"""
+
+class FieldData(BaseModel):
+    """raw field data"""
+
+    name:str
+    totalSpace:int
+    usages:FieldUsage
+
+class TotalFieldData(BaseModel):
+    fields:Dict[str,FieldData]
+    """all field datas.
+    key: field name
+    val: the field data"""
+
+    totalSpaceUsage:float
+    """space usage as percent"""
+
+    totalUsages:FieldUsage
+    """combined field usages from all fields"""
