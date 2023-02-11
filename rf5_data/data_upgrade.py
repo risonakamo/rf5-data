@@ -1,4 +1,4 @@
-from data_types import FarmItem,FarmItem2,FarmItem3
+from rf5_data.types.data_types import FarmItem,FarmItem2,FarmItem3
 
 def upgradeFarmItem(farmitem:FarmItem)->FarmItem2:
     """calculate farm item 2 values"""
