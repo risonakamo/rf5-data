@@ -1,0 +1,29 @@
+- name: carrot
+  lv: 1
+  buy: 400
+  growTime: 10
+  sell: 380
+  growQuant: 3
+  goodSeasons:
+    - fa
+  regrow: false
+
+- name: spinach
+  lv: 3
+  buy: 60
+  growTime: 2
+  sell: 95
+  growQuant: 2
+  goodSeasons:
+    - fa
+  regrow: false
+
+- name: radish
+  lv: 3
+  buy: 60
+  growTime: 2
+  sell: 95
+  growQuant: 2
+  goodSeasons:
+    - fa
+  regrow: false
