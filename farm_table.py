@@ -5,7 +5,7 @@ from rf5_data.data_upgrade import upgradeFarmItem,upgradeFarmItem3
 from rf5_data.display import dataframeDisplay
 
 from typing import List
-from rf5_data.types.data_types import FarmItem,FarmItem2,FarmItem3
+from rf5_data.types.farm_types import FarmItem,FarmItem2,FarmItem3
 
 def main():
     data:List[FarmItem]=[]
